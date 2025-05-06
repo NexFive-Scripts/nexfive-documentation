@@ -2,7 +2,7 @@
 
 ## Open Source vs. Escrow-Protected FiveM Scripts
 
-At Ata Scripts , we offer both **open-source** and **escrow-protected** FiveM scripts. Each type serves different needs here’s how they compare.
+ we offer both **open-source** and **escrow-protected** FiveM scripts. Each type serves different needs here’s how they compare.
 
 ***
 
@@ -49,7 +49,7 @@ Encrypted via **FiveM Escrow**, these scripts **only run on licensed servers**, 
 | Full control & customization | Open Source          |
 | Security & official support  | Escrow-Protected     |
 
-🔹 **All Ata Scripts products are clearly labeled** check descriptions or contact us for guidance!
+🔹 **All NexFive products are clearly labeled** check descriptions or contact us for guidance!
 
 ***
 

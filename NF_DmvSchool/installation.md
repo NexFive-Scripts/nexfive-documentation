@@ -11,14 +11,7 @@
 - ESX Framework
 - ox_lib
 - ox_target
-- ox_inventory (optional)
 
 ## Database
 
-The script will automatically create the necessary database tables on first run. Make sure your database user has the required permissions.
-
-## Permissions
-
-Make sure to add the following permissions to your server:
-- `dmv.license` - For players to take the test
-- `dmv.admin` - For administrators to manage the system 
+The script will automatically create the necessary database tables on first run.

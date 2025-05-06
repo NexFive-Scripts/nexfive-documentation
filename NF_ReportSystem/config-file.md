@@ -110,6 +110,7 @@ Config.UI = {
 4. **Framework Support**:
    - ESX
    - QBCore
+   - Qbox
    - vRP
    - ACE
    - Custom

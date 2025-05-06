@@ -13,7 +13,6 @@ Yes, the script requires:
 - ESX Framework or QBCore
 - ox_lib
 - ox_target
-- ox_inventory (optional)
 
 ## Installation
 
@@ -29,34 +28,12 @@ No, the script will automatically create the necessary database tables on first 
 
 ## Configuration
 
-### How do I add custom report categories?
-You can add categories in the config file:
-```lua
-Config.Categories = {
-    your_category = {
-        label = 'Your Category',
-        color = '#your_color',
-        priority = 1
-    }
-}
-```
 
-### How do I change the report limits?
-You can modify the limits in the config file:
-```lua
-Config.MaxReports = 5 -- Maximum active reports per player
-Config.ReportCooldown = 300 -- Cooldown between reports
-```
 
 ### Can I customize the UI?
 Yes, you can customize the UI in the config file:
 ```lua
-Config.UI = {
-    primaryColor = '#your_color',
-    secondaryColor = '#your_color',
-    font = 'your_font',
-    fontSize = 14
-}
+Config.mainColor = "#0a58ca"
 ```
 
 ## Usage
@@ -69,7 +46,6 @@ Players can submit reports by:
 4. Submitting the report
 
 ### What happens when a report is submitted?
-1. The report is saved to the database
 2. Admins receive a notification
 3. The report appears in the admin panel
 4. The player receives a confirmation
@@ -77,8 +53,6 @@ Players can submit reports by:
 ### How do admins manage reports?
 Admins can use the following commands:
 - `/reports` - View all reports
-- `/closereport [id] [reason]` - Close a report
-- `/respondreport [id] [message]` - Respond to a report
 
 ## Troubleshooting
 

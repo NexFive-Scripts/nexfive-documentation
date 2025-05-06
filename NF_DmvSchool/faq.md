@@ -10,10 +10,9 @@ The script currently supports both ESX and QBCore frameworks.
 
 ### Do I need any dependencies?
 Yes, the script requires:
-- ESX Framework or QBCore
+- ESX Framework or QBCore or Qbox
 - ox_lib
 - ox_target
-- ox_inventory (optional)
 
 ## Installation
 
@@ -37,31 +36,18 @@ Config.DMVHeading = 320.0
 ```
 
 ### How do I add custom theory questions?
-You can add questions in the config file under `Config.TheoryQuestions`:
-```lua
-Config.TheoryQuestions = {
-    {
-        question = "Your question here?",
-        options = {
-            "Option 1",
-            "Option 2",
-            "Option 3",
-            "Option 4"
-        },
-        correct = 1
-    }
-}
-```
+You can add questions in the questions folder
+
 
 ### Can I customize the test vehicles?
 Yes, you can change the test vehicles in the config file:
 ```lua
-Config.TestVehicles = {
-    car = 'blista',
-    motorcycle = 'faggio',
-    truck = 'mule',
-    bus = 'bus'
-}
+    driver = {
+        Vehicle = "blista",
+        speedLimit = 50,
+        time = 15,
+        spawnPoint = vector4(255.139, -1400.731, 29.537, 325.9),
+    }
 ```
 
 ## Usage
@@ -78,11 +64,7 @@ Players can start the test by:
 ### What happens if a player fails the test?
 Players can retake the test after a cooldown period. The cooldown time can be configured in the config file.
 
-### How do admins give licenses?
-Admins can use the following commands:
-- `/givelicense [id] [type]` - Give a license to a player
-- `/removelicense [id] [type]` - Remove a license from a player
-- `/checklicense [id] [type]` - Check a player's license
+
 
 ## Troubleshooting
 
@@ -107,15 +89,12 @@ Admins can use the following commands:
 
 ### Where can I get help?
 You can get support through:
-- Our Discord server
-- The script's store page
-- Our support ticket system
+- Our Discord server : https://discord.gg/eMR45WNT8Y
+
 
 ### How do I report bugs?
 Please report bugs through:
-1. Our Discord server
-2. The script's GitHub issues page
-3. Our support ticket system
+- Our Discord server : https://discord.gg/eMR45WNT8Y
 
 Include the following information:
 - Server logs

@@ -1,10 +1,35 @@
 # ℹ️ About US
 
 
-We are a team of two developers who focus on creating and selling budget-friendly, yet high quality FiveM resources.
 
-It gives us pride to say that during this span of time, we have built our name and earned a positive reputation in the FiveM community.
 
-Our business currently hosts over 3,000 members in our Discord server and has thousands of satisfied customers. Our main goal is to listen to community feedback, incorporate their suggestions, and create scripts that cater to a broad FiveM audience. We also continuously improve and optimize our existing scripts by implementing community-driven updates on a regular basis.
+## 👨‍💻 About Me
 
-<figure><img src=".gitbook/assets/Group 481215.png" alt=""><figcaption></figcaption></figure>
+With over 3 years of experience in FiveM development, I am a versatile full-stack developer specializing in creating immersive and high-performance gaming experiences. My expertise spans across multiple domains:
+
+### 🎮 FiveM Development
+- Extensive experience in developing custom FiveM servers and resources
+- Deep understanding of FiveM's architecture and best practices
+- Proven track record in creating engaging multiplayer experiences
+
+### 💻 Frontend Development
+- Expert in modern web technologies and frameworks
+- Creating responsive and intuitive user interfaces
+- Implementing smooth animations and transitions
+- Optimizing user experience and performance
+
+### ⚙️ Backend Development
+- Building robust server-side applications
+- Database design and optimization
+- API development and integration
+- Security implementation and best practices
+
+### 🎨 UI/UX Design
+- Creating visually appealing and user-friendly interfaces
+- Conducting user research and implementing feedback
+- Designing intuitive navigation and interaction patterns
+- Maintaining consistency in design systems
+
+I am passionate about delivering high-quality solutions that combine technical excellence with creative design. My goal is to create seamless and engaging experiences that exceed user expectations while maintaining optimal performance and security standards.
+
+<figure><img src=".gitbook/assets/logo-2.png" alt=""><figcaption></figcaption></figure>

@@ -2,13 +2,13 @@
 
 ## FiveM Escrow Protection
 
-At **Ata Scripts** , we use the **FiveM Escrow System** to protect our premium scripts. This ensures your purchased scripts work **only** on your licensed server preventing unauthorized sharing and safeguarding developer rights.
+ we use the **FiveM Escrow System** to protect our premium scripts. This ensures your purchased scripts work **only** on your licensed server preventing unauthorized sharing and safeguarding developer rights.
 
 ### What is FiveM Escrow?
 
 FiveM Escrow is an **encryption system** developed by **Cfx.re** (the creators of FiveM). It:
 
-* 🔐 Encrypts the source code of scripts purchased from **0Resmon**.
+* 🔐 Encrypts the source code of scripts purchased from **NexFive**.
 * 🖥️ Allows execution **exclusively** on your licensed server.
 
 ### What Files Are Protected?
