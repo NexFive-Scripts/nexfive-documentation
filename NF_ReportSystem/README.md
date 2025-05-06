@@ -32,10 +32,8 @@ The system can be fully configured through the `config.lua` file. You can custom
 
 ## Commands
 
-- `/report [message]` - Submit a new report
-- `/reports` - View your submitted reports (players)
-- `/adminreports` - View all reports (admins)
-- `/respond [reportID] [message]` - Respond to a report (admins)
+- `/report` - Submit a new report
+- `/reports` - View all reports (admins)
 
 ## Support
 
