@@ -5,14 +5,6 @@
 ### What is NF_ReportSystem?
 NF_ReportSystem is a comprehensive reporting solution for FiveM servers that allows players to submit and manage reports efficiently. It helps server administrators maintain order and address player concerns promptly.
 
-### Which frameworks are supported?
-The script currently supports both ESX and QBCore frameworks.
-
-### Do I need any dependencies?
-Yes, the script requires:
-- ESX Framework or QBCore
-- ox_lib
-- ox_target
 
 ## Installation
 

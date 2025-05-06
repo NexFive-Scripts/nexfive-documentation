@@ -31,8 +31,19 @@ No, the script will automatically create the necessary database tables on first 
 ### How do I change the DMV location?
 You can change the location in the config file:
 ```lua
-Config.DMVLocation = vector3(215.124, -1398.777, 30.587)
-Config.DMVHeading = 320.0
+Config.NPC = {
+    {
+        model = 'a_m_m_business_01',
+        coords = vector3(240.632965, -1379.393433, 32.728149),
+        heading = 136.06298,
+        text = 'DRIVING SCHOOL',
+        eventName = 'NexFive_Dmv:requestUI', 
+        data = {},
+        type = 'client',
+        animation = 'idle',
+        target = true,
+    },
+}
 ```
 
 ### How do I add custom theory questions?

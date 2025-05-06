@@ -12,14 +12,6 @@ Checks if a player has a specific license type.
 - `licenseType` (string): The type of license to check ('car', 'motorcycle', 'truck', 'bus')
 - Returns: `boolean`
 
-### Start Test
-```lua
-exports['NF_DmvSchool']:StartTest(licenseType)
-```
-Starts a DMV test for the specified license type.
-- `licenseType` (string): The type of license test to start
-- Returns: `boolean`
-
 ### Get License Info
 ```lua
 exports['NF_DmvSchool']:GetLicenseInfo(licenseType)
@@ -65,33 +57,6 @@ Gets all licenses for a player.
 - `source` (number): The player's server ID
 - Returns: `table`
 
-## Events
-
-### Client Events
-
-```lua
--- Test started
-TriggerEvent('NF_DmvSchool:TestStarted', licenseType)
-
--- Test completed
-TriggerEvent('NF_DmvSchool:TestCompleted', licenseType, passed)
-
--- License updated
-TriggerEvent('NF_DmvSchool:LicenseUpdated', licenseType, hasLicense)
-```
-
-### Server Events
-
-```lua
--- Give license
-TriggerServerEvent('NF_DmvSchool:GiveLicense', licenseType)
-
--- Remove license
-TriggerServerEvent('NF_DmvSchool:RemoveLicense', licenseType)
-
--- Check license
-TriggerServerEvent('NF_DmvSchool:CheckLicense', licenseType)
-```
 
 ## Example Usage
 
@@ -104,7 +69,3 @@ end
 
 -- Give motorcycle license to player
 exports['NF_DmvSchool']:GiveLicense(1, 'motorcycle')
-
--- Start truck test
-exports['NF_DmvSchool']:StartTest('truck')
-``` 

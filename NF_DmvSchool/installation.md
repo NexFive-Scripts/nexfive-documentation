@@ -8,9 +8,9 @@
 
 ## Dependencies
 
-- ESX Framework
-- ox_lib
-- ox_target
+- ESX -- QBCore -- Qbox
+- qb-target -- ox_target (optional)
+
 
 ## Database
 

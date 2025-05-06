@@ -32,4 +32,4 @@ With over 3 years of experience in FiveM development, I am a versatile full-stac
 
 I am passionate about delivering high-quality solutions that combine technical excellence with creative design. My goal is to create seamless and engaging experiences that exceed user expectations while maintaining optimal performance and security standards.
 
-<figure><img src=".gitbook/assets/logo-2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/logo-2.png" style="width:300px;height:auto;"><figcaption></figcaption></figure>
