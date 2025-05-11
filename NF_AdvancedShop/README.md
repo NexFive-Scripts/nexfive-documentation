@@ -1,4 +1,4 @@
-# NF-Shop
+# NF-AdvancedShop
 
 A comprehensive shop system for FiveM servers with advanced features including shop ownership, robbery mechanics, and inventory management.
 
@@ -57,7 +57,7 @@ A comprehensive shop system for FiveM servers with advanced features including s
 3. Import the SQL file to your database
 4. Add the following to your server.cfg:
 ```cfg
-ensure NF-Shop
+ensure NF-AdvancedShop
 ```
 
 ## Configuration

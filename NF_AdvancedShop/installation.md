@@ -1,255 +1,124 @@
-# MJ-Shop Configuration Guide
+# NF-AdvancedShop Installation Guide
 
-## Basic Configuration
+## Prerequisites
+Before installing NF-AdvancedShop, ensure you have the following:
 
-### Framework Selection
-```lua
-Config.Framework = "esx" -- Choose between "esx" or "qb-core"
-```
+1. A working FiveM server
+2. One of the supported frameworks:
+   - ESX Framework
+   - QBCore Framework
+3. One of the supported inventory systems:
+   - ox_inventory
+   - qb-inventory
+   - qs-inventory
+   - esx_inventory
+4. One of the supported SQL systems:
+   - oxmysql
+   - ghmattimysql
+   - mysql-async
+5. One of the supported target systems:
+   - ox_target
+   - qb-target
+   - Default target
 
-### Inventory System
-```lua
-Config.inventory = "ox_inventory" -- Choose between:
--- "ox_inventory"
--- "qb_inventory"
--- "qs_inventory"
--- "esx_inventory"
-```
+## Installation Steps
 
-### SQL Configuration
-```lua
-Config.SQL = "oxmysql" -- Choose between:
--- "oxmysql"
--- "ghmattimysql"
--- "mysql-async"
-```
+### 1. Download and Extract
+1. Download the latest release from the GitHub repository
+2. Extract the contents to your server's resources folder
+3. Rename the folder to `NF-AdvancedShop` if it's not already named as such
 
-### Debug Mode
-```lua
-Config.Debug = false -- Set to true for debug information
-```
+### 2. Database Setup
+1. Open your database management tool (e.g., HeidiSQL, phpMyAdmin)
+2. Create a new database if you haven't already
+3. Import the `sql.sql` file located in the `sql` folder
+4. Verify that the following tables have been created:
+   - `NF_shop_types`
+   - `NF_shops_active`
 
-## Shop Configuration
+### 3. Configuration
+1. Navigate to the `config` folder
+2. Open `config.lua` in your preferred text editor
+3. Configure the following settings:
+   ```lua
+   Config.Framework = 'esx' -- or 'qbcore'
+   Config.Inventory = 'ox_inventory' -- or your preferred inventory system
+   Config.SQL = 'oxmysql' -- or your preferred SQL system
+   Config.Target = 'ox_target' -- or your preferred target system
+   ```
+4. Adjust other settings according to your server's needs
 
-### Target System
-```lua
-Config.Target = "default" -- Choose between:
--- "default"
--- "ox_target"
--- "qb-target"
-```
+### 4. Server Configuration
+1. Open your `server.cfg`
+2. Add the following line:
+   ```cfg
+   ensure NF-AdvancedShop
+   ```
+3. Make sure the resource is started after your framework and inventory system
 
-### Shop Display Settings
-```lua
-Config.displayShopOwnerName = true -- Display owner name above shop
-```
 
-### UI Configuration
-```lua
-Config.UI = {
-    ["Add_To_Basket"] = "Add To Basket",
-    ["Not_Available!"] = "Not Available!",
-    ["BASKET"] = "BASKET",
-    -- Add more UI strings as needed
-}
-```
+### 5. Resource Verification
+1. Start your server
+2. Check the server console for any errors
+3. Verify the resource is running with:
+   ```
+   /refresh
+   /start NF-AdvancedShop
+   ```
 
-### Notification System
-```lua
-Config.Notification = {
-    ["add_type"] = { text = "Type successfully added", type = "success" },
-    ["edit_type"] = { text = "Changes saved", type = "success" },
-    -- Add more notification types
-}
-```
+## Post-Installation
 
-## Robbery System Configuration
+### Testing
+1. In-game, use the following commands to verify installation:
+   ```
+   /openconfig -- Should open the configuration menu (if you have admin permissions)
+   ```
+2. Check if shops are spawning at their configured locations
+3. Verify that the inventory system is working by purchasing items
+4. Test the robbery system (if enabled)
+5. Test the post box system (if enabled)
 
-### Basic Settings
-```lua
-Config.Robbery = {
-    CopsNeed = 2, -- Minimum cops required
-    price = 1000, -- Price to start robbery
-    BossSpawn = {
-        ped = "s_m_m_doctor_01",
-        Pos = vector4(x, y, z, h)
-    }
-}
-```
+### Troubleshooting
+If you encounter any issues:
 
-### Robbery Mechanics
-```lua
-Config.Robbery = {
-    -- Add robbery-specific settings
-    time_to_success = 30, -- Time in seconds
-    defender = "police", -- Job that gets notified
-    steal_from_shop_cashier = {
-        active = true,
-        coords = {
-            -- Add cashier positions
-        },
-        random_reward_between = {
-            min = 100,
-            max = 500
-        }
-    }
-}
-```
-
-## Post Box System Configuration
-
-### Basic Settings
-```lua
-Config.PostBoxSpawnRadius = 100 -- Radius for vehicle spawn
-Config.PostBoxCoolDown = 15 -- Cooldown in minutes
-```
-
-### Vehicle Settings
-```lua
-Config.PostBox = {
-    vehicle = "boxville2",
-    driver = "csb_prologuedriver"
-}
-```
-
-## Shop Types Configuration
-
-### Creating a Shop Type
-```lua
--- Example shop type structure
-{
-    name = "General Store",
-    customBackground = false,
-    backgroundLink = "",
-    TriggerEvent = "",
-    colorDeg = "45deg",
-    bgLink = "",
-    items = {
-        {
-            name = "bread",
-            count = "10",
-            max_in_shop = "50",
-            sell_price = "5",
-            order_price = "3",
-            img = "bread.png"
-        }
-        -- Add more items
-    }
-}
-```
-
-## Database Configuration
-
-### Required Tables
-
-#### mj_shop_types
-```sql
-CREATE TABLE IF NOT EXISTS `mj_shop_types` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `name` varchar(50) NOT NULL,
-    `customBackground` tinyint(1) NOT NULL,
-    `backgroundLink` text,
-    `TriggerEvent` text,
-    `colorDeg` varchar(50),
-    `bgLink` text,
-    `items` text,
-    PRIMARY KEY (`id`)
-);
-```
-
-#### mj_shops_active
-```sql
-CREATE TABLE IF NOT EXISTS `mj_shops_active` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `owner` varchar(50),
-    `owner_name` varchar(50),
-    `type` varchar(50),
-    `ped_type` varchar(50),
-    `buy_marker` text,
-    `shop_for_sell` tinyint(1),
-    `name` varchar(50),
-    `robbery` text,
-    `standing_ped_coord` text,
-    `shop_price` int(11),
-    `salesProfit` int(11),
-    `chartData` text,
-    `items` text,
-    `balance` int(11),
-    `postboxcoords` text,
-    PRIMARY KEY (`id`)
-);
-```
-
-## Advanced Configuration
-
-### Custom Events
-```lua
--- Add custom events for shop interactions
-Config.CustomEvents = {
-    onShopPurchase = "custom:onShopPurchase",
-    onShopRobbery = "custom:onShopRobbery"
-}
-```
-
-### Permission System
-```lua
-Config.Framework_perms = {
-    ["admin"] = true,
-    ["superadmin"] = true
-}
-```
-
-## Troubleshooting
+1. Check the server console for error messages
+2. Verify all dependencies are properly installed and running
+3. Ensure the database tables are created correctly
+4. Check file permissions in the resource folder
+5. Verify your framework version is compatible
 
 ### Common Issues
 
-1. **Inventory Not Working**
-   - Check if the correct inventory system is selected
-   - Verify inventory exports are available
-   - Check item names match your inventory system
+#### Database Connection Errors
+- Verify your database credentials in the framework configuration
+- Check if the database server is running
+- Ensure the database user has proper permissions
 
-2. **Database Errors**
-   - Verify SQL configuration
-   - Check table structure
-   - Ensure proper permissions
+#### Resource Not Starting
+- Check if all dependencies are started before NF-AdvancedShop
+- Verify the resource name in server.cfg matches the folder name
+- Check for any syntax errors in the configuration files
 
-3. **Framework Issues**
-   - Verify framework selection
-   - Check framework exports
-   - Ensure proper initialization
-
-### Debug Mode
-
-Enable debug mode for detailed logging:
-```lua
-Config.Debug = true
-```
-
-## Performance Optimization
-
-### Recommended Settings
-```lua
-Config.Optimization = {
-    updateInterval = 1000, -- Update interval in ms
-    maxShops = 50, -- Maximum number of shops
-    cacheTimeout = 300 -- Cache timeout in seconds
-}
-```
-
-## Security Considerations
-
-1. Always validate user input
-2. Use proper permission checks
-3. Implement rate limiting
-4. Secure database queries
-5. Validate item transactions
+#### Inventory Integration Issues
+- Verify the inventory system is properly configured
+- Check if the inventory system is started before NF-AdvancedShop
+- Ensure the item names match between the shop and inventory system
 
 ## Support
+If you need additional help:
 
-For additional support:
-1. Check the documentation
-2. Review error logs
-3. Contact support with:
-   - Error messages
-   - Configuration details
-   - Steps to reproduce 
+1. Check the documentation in the `docs` folder
+2. Join our Discord server for community support
+
+## Updates
+To update the resource:
+
+1. Backup your current configuration
+2. Download the latest release
+3. Replace the old files with the new ones
+4. Keep your custom configuration
+5. Restart the resource
+
+---
+
+*For additional support, please join our Discord server or create an issue on GitHub.* 

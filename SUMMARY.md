@@ -24,4 +24,5 @@
   * [FAQ](NF_ReportSystem/faq.md)
 * [🚨 NF_AdvancedShop](NF_AdvancedShop/README.md)
   * [Installation](NF_AdvancedShop/installation.md)
+  * [Configuration](NF_AdvancedShop/configuration.md)
   * [Config File](NF_AdvancedShop/config-file.md)
