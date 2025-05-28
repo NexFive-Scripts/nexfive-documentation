@@ -13,7 +13,7 @@ options = {
     {text = "I want to sell items", event = "NF_talktonpc:sellItems", serverSide = false},
 
     -- Notification option
-    {text = "Show notification", serverSide = false, event = "ataTalkToNpc:notification",
+    {text = "Show notification", serverSide = false, event = "NF_talktonpc:notification",
     args = {title = "Notification", message = "Message text", options = "Button text",
     icon = "fas fa-university", Clickevent = "custom:event"}},
 
